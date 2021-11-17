@@ -16,10 +16,9 @@ void remove_negative(std::vector<int>& input) {
 }
 
 void remove_last_even(std::vector<int>& input) {
-  for (int i = size(input); i > 0; --i) {
-    if (input[i] % 2 == 0) {
-      auto iter = input.cbegin();
-      input.erase(iter + i);
+  for (auto i = input.rbegin(); i != input.rend(); ++i) {
+    if ((*i) % 2 == 0) {
+      input.erase((i+1).base());
       break;
     }
   }
